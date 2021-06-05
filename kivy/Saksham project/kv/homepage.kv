@@ -1,0 +1,30 @@
+<HomePage>:
+    BoxLayout:
+        orientation: 'vertical'
+        GridLayout:
+            cols: 1
+            pos_hint: {"Top": 1, "left": 1}
+            size_hint: 1, .1
+            MDToolbar:
+                title: "Saathi"
+                left_action_items: [['menu', lambda x: app.changeScreen('Dashboard')]]
+        GridLayout:
+            canvas:
+                Color:
+                    rgba: 0, 1, 1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            cols: 1
+            # pos_hint: {'top': .9, 'left': 1}
+            # size_hint: 1, .9
+            # padding: sp(50), sp(150), sp(50), sp(150)
+            # spacing: sp(200)
+            Button:
+                text: 'See your Location'
+                on_release:
+                    app.changeScreen('Dashboard')
+            Button:
+                text: 'send your location to given contacts'
+                on_release:
+                    app.locationTrace()

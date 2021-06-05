@@ -1,0 +1,96 @@
+body {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(Tricy.jpg);
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+header {
+    background-size: 100%;
+    height: 100vh;
+    background-size: float;
+    background-position: no-repeat;
+}
+
+ul {
+    float: right;
+    list-style-type: none;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+ul li {
+    display: inline-block;
+}
+
+ul li a {
+    text-decoration: none;
+    color: red;
+    padding: 15px 20px;
+    border: 1px solid black;
+    transition: 0.6s ease;
+} */
+
+/* ul li a hover {
+    background-color: white;
+    color: red;
+}
+
+/* .logo img {
+    float: left;
+    width: 250px;
+    height: 250px;
+    padding: 15px 20px;
+    border: 3px solid black;
+    margin-left: -100px;
+} */
+
+.main {
+    max-width: 1200px;
+    margin: auto;
+    background-color: aqua;
+}
+
+.clubs {
+    left: 72px;
+    bottom: 35px;
+    position: absolute;
+}
+
+.clubs ul li {
+    list-style-type: none;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.clubs ul li a {
+    color: red;
+    border-radius: 150%;
+    border: 2px solid black;
+    padding: 10px;
+    display: black;
+}

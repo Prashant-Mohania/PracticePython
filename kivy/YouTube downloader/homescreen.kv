@@ -1,0 +1,39 @@
+
+<HomeScreen>:
+    GridLayout:
+        cols: 1
+        padding: 20
+        spacing: 20
+        MDLabel:
+            text: 'Paste YouTube Video URL'
+            halign: 'center'
+            font_size: 40
+
+        TextInput:
+            id: url
+            hint_text: "Paste URL"
+            multiline: False
+            halign: 'center'
+            size_hint: .4, .4
+
+        MDRoundFlatButton:
+            id: btn
+            text: "Select Resolution"
+            font_size: 20
+            on_release: root.show_toast('Enter URL') if url.text == '' else root.new_thread(url)
+        
+        MDSpinner:
+            id: spinner
+            size_hint: None, None
+            size: dp(100), dp(100)    
+            pos_hint: {'center_x': .5, 'center_y': .2}
+            active: False
+
+        MDLabel:
+            id: vt
+            text: ""
+            size_hint: .2, .2
+        
+        MDProgressBar:
+            id: prgsbar
+            value: 0

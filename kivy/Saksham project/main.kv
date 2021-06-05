@@ -1,0 +1,30 @@
+
+#:include kv/detailspage.kv
+#:include kv/homepage.kv
+#:include kv/dashboardpage.kv
+#:include kv/givenlocation.kv
+
+NavigationLayout:
+    ScreenManager:
+        id: sm
+        DetailsPage:
+            id: details
+            name: 'details'
+            
+        HomePage:
+            id: Home
+            name: 'Home'
+        
+        DashboardPage:
+            id: Dashboard
+            name: 'Dashboard'
+        
+        GivenLocation:
+            id: GivenLocation
+            name: 'GivenLocation'
+            
+    MDNavigationDrawer:
+        id: nav
+        MDLabel:
+            text: 'Naviation Drawer'
+            halign: 'center'

@@ -1,0 +1,15 @@
+
+#:include kv\homepage.kv
+#:include kv\settingpage.kv
+
+
+GridLayout:
+    cols: 1
+    ScreenManager:
+        id: screen_manager
+        HomePage:
+            id: home_page
+            name: "home_page"
+        SettingPage:
+            id: setting_page
+            name: "setting_page"

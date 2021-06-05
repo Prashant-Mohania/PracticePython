@@ -1,0 +1,20 @@
+
+<SettingPage>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        ScrollView:
+            MDList:
+                OneLineAvatarListItem:
+                    text: 'Change Storage Location'
+                    on_release:
+                        app.show_toast('Change Storage Location')
+                    IconLeftWidget:
+                        icon: 'folder-information'
+
+                OneLineAvatarListItem:
+                    text: 'App Info'
+                    on_release:
+                        app.show_toast("App Info")
+                    IconLeftWidget:
+                        icon: 'application'

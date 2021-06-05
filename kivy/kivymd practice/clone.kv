@@ -1,0 +1,31 @@
+<Tab>:
+    MDLabel:
+        halign: "center"
+        font_size: 30
+
+BoxLayout:
+    orientation: 'vertical'
+    ScreenManager:
+        id: screen_manager
+        MDToolbar:
+            title: "WhatsApp"
+            md_bg_color: .2, .5, .2, 1
+            right_action_items: [['magnify', lambda x: print("Magnify")],['chat', lambda x: print("Chat")],['dots-vertical', lambda x: print("Menu")]]
+        MDTabs:
+            background_color: .2, .5, .2, 1
+            Tab:
+                text: "CHATS"
+                MDFloatingActionButton:
+                    icon: 'chat'
+                    pos_hint: {'center_x': .85, 'center_y': .09}
+                    md_bg_color: .2, .5, .2, 1
+                    on_release:
+                        print("CHATS")
+            Tab:
+                text: "STORIES"
+                MDFloatingActionButton:
+                    icon: 'camera'
+                    pos_hint: {'center_x': .85, 'center_y': .09}
+                    md_bg_color: .2, .5, .2, 1
+            Tab:
+                text: "CALLS"

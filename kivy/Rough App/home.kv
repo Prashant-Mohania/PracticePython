@@ -1,0 +1,122 @@
+
+#:import utils kivy.utils
+
+<ItemForCustomBottomSheet@OneLineIconListItem>
+    # on_release: app.custom_sheet.dismiss()
+    # icon: ""
+
+    IconLeftWidget:
+        icon: 'download'
+
+
+<ContentCustomSheet@BoxLayout>:
+    orientation: "vertical"
+    size_hint_y: None
+    height: "800dp"
+    FloatLayout:
+        GridLayout:
+            cols: 2
+            pos_hint: {'top': 1, 'left': 1}
+            size_hint: 1, .15
+            canvas:
+                Color:
+                    rgba: utils.get_color_from_hex('#20B3F2')
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            Label:
+                text: 'Resolution'
+                font_size: 20
+            Label:
+                text: 'Size'
+                font_size: 20
+
+        GridLayout:
+            rows: 1
+            pos_hint: {'top': .85, 'left': 1}
+            ScrollView:
+
+                MDGridLayout:
+                    cols: 1
+                    # adaptive_height: True
+                    MDList:
+
+                        ItemForCustomBottomSheet:
+                            text: app.s1
+                            on_release:
+                                app.custom_sheet.dismiss()
+                                app.v_download(app.k128)
+
+                        ItemForCustomBottomSheet:
+                            text: app.s2
+                            on_release:
+                                app.custom_sheet.dismiss()
+                                app.v_download(app.p144)
+                        
+                        ItemForCustomBottomSheet:
+                            text: app.s3
+                            on_release:
+                                app.custom_sheet.dismiss()
+                                app.v_download(app.p240)
+
+                        ItemForCustomBottomSheet:
+                            text: app.s4
+                            on_press:
+                                app.custom_sheet.dismiss()
+                                app.v_download(app.p360)
+
+                        ItemForCustomBottomSheet:
+                            text: app.s5
+                            on_release:
+                                app.custom_sheet.dismiss()
+                                app.v_download(app.p480)
+
+                        ItemForCustomBottomSheet:
+                            text: app.s6
+                            on_release:
+                                app.custom_sheet.dismiss()
+                                app.v_download(app.p720)
+
+<HomePage>:
+    GridLayout:
+        cols: 1
+        spacing: 20
+        padding: 20
+    
+        MDLabel:
+            id: lb
+            text: 'Copy YouTube video url and Paste here'
+            halign: 'center'
+            font_size: 20
+            size_hint: .4, .4
+            
+
+        TextInput:
+            id: url
+            hint_text: 'PASTE URL'
+            multiline: False
+            size_hint: .4, .4
+        
+        MDRoundFlatButton:
+            id: btn
+            text: "Select Resolution"
+            font_size: 20
+            on_release: app.show_toast('Enter URL') if url.text == '' else app.new_thread(url)
+
+
+        MDSpinner:
+            id: spinner
+            size_hint: None, None
+            size: dp(100), dp(100)    
+            pos_hint: {'center_x': .5, 'center_y': .2}
+            active: False
+
+        MDLabel:
+            id: vt
+            text: ""
+            size_hint: .2, .2
+        
+        MDProgressBar:
+            id: prgsbar
+            value: 0

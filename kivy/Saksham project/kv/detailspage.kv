@@ -1,0 +1,58 @@
+<DetailsPage>:
+    FloatLayout:
+        id: fl
+        GridLayout:
+            id: tb
+            cols: 1
+            pos_hint: {'top': 1}
+            size_hint: 1, .1
+            MDToolbar:
+                title: 'Saathi'
+                elevation: 10
+
+        GridLayout:
+            cols: 1
+            pos_hint: {'top': .8}
+            size_hint: 1, .1
+            MDLabel:
+                text: 'Enter Your Details'
+                halign: 'center'
+                font_size: sp(40)
+        
+        GridLayout:
+            cols: 1
+            pos_hint: {'top': .7}
+            size_hint: 1, .5
+            padding: sp(50)
+            MDTextField:
+                id: name
+                hint_text: 'Your Name'
+                mode: 'rectangle'
+            
+            MDTextField:
+                id: age
+                hint_text: 'age'
+                mode: 'rectangle'
+
+            
+            MDTextField:
+                id: email
+                hint_text: 'email'
+                mode: 'rectangle'
+
+
+            MDTextField:
+                id: phoneNumber
+                hint_text: 'Phone Number'
+                mode: 'rectangle'
+        GridLayout:
+            cols: 1
+            # adaptive_width: True
+            pos_hint: {'top': .25}
+            size_hint: 1, .1
+            padding: sp(130), 0, sp(130), 0
+            MDRaisedButton:
+                text: 'Submit'
+                on_release:
+                    app.detailsValidate()
+                    # sm.current = 'Home' if name.text != '' and age.text != '' and email.text != '' and phoneNumber.text != '' else print("We can't help you")

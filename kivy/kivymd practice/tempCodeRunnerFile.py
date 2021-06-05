@@ -1,0 +1,1 @@
+self.theme_cls.accent_palette = "Green"

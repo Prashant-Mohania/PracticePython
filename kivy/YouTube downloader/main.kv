@@ -1,0 +1,78 @@
+
+#:include homescreen.kv
+
+NavigationLayout:
+    ScreenManager:
+        id: screen_manager
+        Screen:
+            name: 'home_screen'
+            BoxLayout:
+                orientation: 'vertical'
+                MDToolbar:
+                    title: 'YouTube Video'
+                    # md_bg_color: 1, 0, 0, 1
+                    left_action_items: [['menu', lambda x: nav.toggle_nav_drawer()]]
+                HomeScreen:
+                    id: home_screen
+        
+        Screen:
+            id: setting_screen
+            name: 'setting_screen'
+            BoxLayout:
+                orientation: 'vertical'
+                MDToolbar:
+                    title: 'Settings'
+                    # md_bg_color: 1, 0, 0, 1
+                    left_action_items: [['menu', lambda x: nav.toggle_nav_drawer()]]
+                ScrollView:
+                    MDList:
+                        OneLineAvatarListItem:
+                            text: 'Change Storage Location'
+                            on_release:
+                                app.file_manager_open()
+                            IconLeftWidget:
+                                icon: 'folder-information'
+
+                        OneLineAvatarListItem:
+                            text: 'App Info'
+                            on_release:
+                                app.show_toast("App Info")
+                            IconLeftWidget:
+                                icon: 'application'
+    
+    MDNavigationDrawer:
+        id: nav
+        close_on_click: False
+        scrim_color: [0, 0, 0, 0.7]
+        drawer_logo_allow_stretch: False
+        drawer_logo_keep_ratio: True
+        orientation: "vertical"
+        padding: "8dp"
+        spacing: "8dp"
+        MDToolbar:
+            title: 'YOUTUBE'
+            right_action_items: [['close', lambda x: nav.set_state('close')]]        
+
+        AnchorLayout:
+            anchor_x: "center"
+
+            Image:
+                id: avatar
+                source: "1.jpeg"
+
+        ScrollView:
+            MDList:
+                OneLineAvatarListItem:
+                    text: "Home"
+                    on_press:
+                        nav.set_state("close")
+                        screen_manager.current = "home_screen"
+                    IconLeftWidget:
+                        icon: 'home'
+                OneLineAvatarListItem:
+                    text: "Settings"
+                    on_press:
+                        nav.set_state("close")
+                        screen_manager.current = "setting_screen"
+                    IconLeftWidget:
+                        icon: 'settings'

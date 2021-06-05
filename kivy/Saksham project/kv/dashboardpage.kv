@@ -1,0 +1,52 @@
+
+<DashboardPage>:
+    on_enter:
+        app.preDashboard()
+    BoxLayout:
+        orientation: 'vertical'
+        GridLayout:
+            cols: 1
+            pos_hint: {'top': 1, 'left': 1}
+            size_hint: 1, .1
+            MDToolbar:
+                title: 'Dashboard'
+                left_action_items: [['menu', lambda x: app.changeScreen('GivenLocation')]]
+
+        GridLayout:
+            cols: 2
+            pos_hint: {'top': .9, 'left': 1}
+            size_hint: 1, .9
+            padding: sp(50), sp(20), sp(50), sp(20)
+            spacing: sp(10)
+            
+            MDLabel:
+                text: 'Name :- '
+                font_size: 25
+            
+            MDLabel:
+                id: name
+                font_size: 25
+            
+            MDLabel:
+                text: 'Age :- '
+                font_size: 25
+            
+            MDLabel:
+                id: age
+                font_size: 25
+            
+            MDLabel:
+                text: 'Email :-'
+                font_size: 25
+            
+            MDLabel:
+                id: email
+                font_size: 25
+            
+            MDLabel:
+                text: 'Phone Number :- '
+                font_size: 25
+            
+            MDLabel:
+                id: phoneNumber
+                font_size: 25

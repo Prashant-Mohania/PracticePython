@@ -1,0 +1,55 @@
+
+#:include home.kv
+#:include setting.kv
+
+NavigationLayout:
+    ScreenManager:
+        id: sm
+        Screen:
+            name: 'Home_Page'
+            BoxLayout:
+                orientation: 'vertical'
+                
+                MDToolbar:
+                    title: 'U Douwn'
+                    left_action_items: [['menu', lambda x: nav.set_state('open')]]
+                HomePage:
+                    id: Home_Page
+        Screen:
+            name: 'Setting_Page'
+            BoxLayout:
+                orientation: 'vertical'
+                MDToolbar:
+                    title: 'Settings'
+                    # md_bg_color: 1, 0, 0, 1
+                    left_action_items: [['menu', lambda x: nav.set_state('open')]]
+                SettingPage:
+                    id: Setting_Page
+
+    MDNavigationDrawer:
+        id: nav
+        orientation: "vertical"
+
+        Image:
+            id: avatar
+            source: "1.jpeg"
+
+        ScrollView:
+            MDList:
+                OneLineAvatarListItem:
+                    text: "Home"
+                    on_press:
+                        nav.set_state("close")
+                        # sm.current = "Home_Page"
+                        app.chng('Home_Page')
+
+                    IconLeftWidget:
+                        icon: 'home'
+                OneLineAvatarListItem:
+                    text: "Settings"
+                    on_press:
+                        nav.set_state("close")
+                        # sm.current = "Setting_Page"
+                        app.chng('Setting_Page')
+                    IconLeftWidget:
+                        icon: 'settings'

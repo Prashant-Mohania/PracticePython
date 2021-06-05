@@ -1,0 +1,171 @@
+<Tab>:
+    MDLabel:
+        halign: "center"
+        font_size: 30
+        # tab_indicator_anim: "True"
+        font_style: "H2"
+
+
+BoxLayout:
+    orientation: "vertical"
+
+
+    ScreenManager:
+        id: screen_manager
+        Screen:
+            name: "Chat"
+            MDToolbar:
+                title: 'WhatsApp'
+                md_bg_color: .2, .5, .2, 1
+                # specific_text_color: 1, 1, 1, 1
+                right_action_items: [['magnify', lambda x: print("Magnify")],  ['dots-vertical', lambda x: print("menu")]]
+                # style:"fixed"
+            MDTabs:
+                md_bg_color: .2, .5, .2, 1
+
+                # Tab:
+                #     text: "camera"
+                
+                Tab:
+                    text: "CHATS"
+                    ScrollView:
+                        MDList:
+                            TwoLineAvatarIconListItem:
+                                text: "Prashant Mohania"
+                                secondary_text: "New message arrived"
+                                ImageLeftWidget:
+                                    source: "me.png"
+                            TwoLineAvatarIconListItem:
+                                text: "Prashant Mohania"
+                                secondary_text: "New message arrived"
+                                ImageLeftWidget:
+                                    source: "me.png"
+                            TwoLineAvatarIconListItem:
+                                text: "Prashant Mohania"
+                                secondary_text: "New message arrived"
+                                ImageLeftWidget:
+                                    source: "me.png"
+                    MDFloatingActionButton:
+                        # text: "Chats"
+                        icon: 'chat'
+                        on_release: screen_manager.current = "Contact"
+                        pos_hint: {"center_x": .9, 'center_y': .09} 
+                        # rotation_root_button: True
+                        md_bg_color: .2, .5, .2, 1
+
+                    
+                    # TwoLineIconListItem:
+                    #     text: "Kirti Mohania"
+                    #     secondary_text: "New message arrived"
+                    #     IconLeftWidget:
+                    #         icon: "nature-people"
+
+                Tab:
+                    text: "STATUS"
+                    MDFloatingActionButton:
+                        # text: "Chats"
+                        icon: 'camera'
+                        on_press: print("Camera")
+                        pos_hint: {"center_x": .9, 'center_y': .09}
+                        md_bg_color: .2, .5, .2, 1
+
+                Tab:
+                    text: "CALLS"
+                    
+                    # MDFloatingActionButtonSpeedDial:
+                        # text: "STATUS"
+                        # data: app.data1
+                # rotation_root_button: True
+        Screen:
+            name: "Contact"
+            MDToolbar:
+                md_bg_color: .2, .5, .2, 1
+                left_action_items: [['keyboard-backspace', lambda x: print("back")]]
+                right_action_items: [['magnify', lambda x: print("back")]]
+            
+            ScrollView:
+                MDList:
+                    TwoLineAvatarIconListItem:
+                        text: "Prashant Mohania"
+                        secondary_text: "New message arrived"
+                        ImageLeftWidget:
+                            source: "me.png"
+                    TwoLineAvatarIconListItem:
+                        text: "Prashant Mohania"
+                        secondary_text: "New message arrived"
+                        ImageLeftWidget:
+                            source: "me.png"
+                    TwoLineAvatarIconListItem:
+                        text: "Prashant Mohania"
+                        secondary_text: "New message arrived"
+                        ImageLeftWidget:
+                            source: "me.png"
+            
+        
+
+
+
+
+        
+        # MDIconButton:
+        #     icon: 'home'
+        #     theme_text_color: 'Custom'
+        #     text_color: [1,1,1,1]
+        #     on_press: print("Button Presses")
+        # MDIconButton:
+        #     icon: 'home'
+        #     theme_text_color: 'Custom'
+        #     text_color: [1,1,1,1]
+        #     on_press: print("Button Presses")
+        # MDIconButton:
+        #     icon: 'home'
+        #     theme_text_color: 'Custom'
+        #     text_color: [1,1,1,1]
+        #     on_press: print("Button Presses")
+
+    # Button:
+    #     text: "Prashant Mohania"
+        
+
+    # MDToolbar:
+    #     title: "TechPramo"
+    #     md_bg_color: .2,.2,.2,1
+    #     MDIconButton:
+    #         icon: 'facebook'
+    #         theme_text_color: 'Custom'
+    #         text_color: [1,1,1,1]
+    #         on_press: print("FaceBook")
+    #     MDIconButton:
+    #         icon: 'instagram'
+    #         theme_text_color: 'Custom'
+    #         text_color: [1,1,1,1]
+    #         on_press: print("Instagram")
+    #     MDIconButton:
+    #         icon: 'twitter'
+    #         theme_text_color: 'Custom'
+    #         text_color: [1,1,1,1]
+    #         on_press: print("FaceBook")
+
+# <contact>:
+#     Screen:
+#         TwoLineIconListItem:
+#         text: "Two-line item with avatar"
+#         secondary_text: "Secondary text here"
+#         IconLeftWidget:
+#             icon: "language-python"
+
+
+
+
+
+# # navigation drawer code
+
+# NavigationLayout:
+
+#     ScreenManager:
+
+#         Screen:
+
+#         Screen:
+
+#     MDNavigationDrawer:

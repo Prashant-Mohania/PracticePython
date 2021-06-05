@@ -1,0 +1,18 @@
+<GivenLocation>:
+    BoxLayout:
+        orientation: 'vertical'
+        GridLayout:
+            cols: 1
+            pos_hint: {'top': 1, 'left': 1}
+            size_hint: 1, .1
+            MDToolbar:
+                title: "Saathi"
+                left_action_items: [['menu', lambda x: app.changeScreen('Home')]]
+        GridLayout:
+            cols: 1
+            pos_hint: {'top': .9, 'left': 1}
+            size_hint: 1, .9
+            MDLabel:
+                id: location
+                text: "Prashant Mohania"
+                halign: 'center'

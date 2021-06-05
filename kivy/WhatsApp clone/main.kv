@@ -1,0 +1,13 @@
+#:include kv/homeScreen.kv
+#:include kv/contactScreen.kv
+
+BoxLayout:
+    orientation: 'vertical'
+    ScreenManager:
+        id: screen_manager
+        HomeScreen:
+            id: home_screen
+            name: "home_screen"
+        ContactScreen:
+            id: conatct_screen
+            name: "contact_screen"            

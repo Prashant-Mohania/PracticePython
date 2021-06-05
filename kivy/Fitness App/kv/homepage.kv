@@ -1,0 +1,60 @@
+
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+<HomePage>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: get_color_from_hex('#808080')
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        GridLayout:
+            rows: 1
+            pos_hint: {'top': 1, 'left': 1}
+            size_hint: 1, .1
+            Image:
+                source: 'icons/002-sunrise.png'
+            Image:
+                source: 'icons/001-sun.png'
+        
+        GridLayout:
+            rows: 1
+            pos_hint: {'top': .9, 'left': 1}
+            size_hint: 1, .2
+            Image:
+                source: 'icons/003-sunset.png'
+            Image:
+                id: avatar
+                source: 'icons/avatars/man.png'
+            Image:
+                source: 'icons/007-crescent-moon.png'
+
+        Label:
+            id: streak
+            text: '12 days streak'
+            pos_hint: {'top': .7, 'left': 1}
+            size_hint: 1, .1
+
+        GridLayout:
+            rows: 1
+            pos_hint: {'top': .6, 'left': 1}
+            size_hint: 1, .4
+
+        GridLayout:
+            rows: 1
+            pos_hint: {'top': .2, 'left': 1}
+            size_hint: 1, .2
+            ImageButton:
+                source: 'icons/007-add-friend.png'
+                on_release:
+                    print("Add Friends")
+            ImageButton:
+                source: 'icons/add.png'
+                on_release:
+                    print("Add")
+                    app.s()
+            ImageButton:
+                source: 'icons/settings.png'
+                on_release:
+                    app.change_page('setting_page', 'left')

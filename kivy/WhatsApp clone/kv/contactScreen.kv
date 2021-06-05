@@ -1,0 +1,20 @@
+
+<ContactScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: "Select contact"
+            md_bg_color: .2, .5, .2, 1
+            left_action_items: [['keyboard-backspace', lambda x: app.change_screen("home_screen", "right")]]
+            right_action_items: [['magnify', lambda x: app.show_toast("magnify")]]
+        # Button:
+        #     text:
+        #         "Contact\n Screen"
+        #     font_size: 40
+        #     on_release:
+        #         app.change_screen("home_screen", "right")
+        MDLabel:
+            text: 'Contect Screen'
+            font_size: 40
+            halign: 'center'
+
